@@ -55,7 +55,7 @@ zinit wait"0" lucid for \
 eval "$(starship init zsh)"
 
 # Pokefetch (Se ejecuta en segundo plano para no retrasar el prompt)
-[[ -f ~/scripts/pokefetch.sh ]] && source ~/scripts/pokefetch.sh
+[[ -f ~/Scripts/pokefetch.sh ]] && source ~/Scripts/pokefetch.sh
 #(~/scripts/pokefetch.sh &)
 
 # ===============================================================
