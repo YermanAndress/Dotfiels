@@ -2,7 +2,7 @@
 
 # --- Configuración VM ---
 PACKAGES="zsh bat eza ripgrep thunar git ttf-firacode-nerd ttf-nerd-fonts-symbols-common nwg-look rsync virtualbox-guest-utils"
-AUR_PACKAGES="zen-browser-bin pokeget sddm-theme-tokyo-night visual-studio-code-bin"
+AUR_PACKAGES="zen-browser-bin pokeget sddm-theme-tokyo-night visual-studio-code-bin quickshell-git"
 
 echo "🖥️ Iniciando instalación en Máquina Virtual..."
 
@@ -25,15 +25,16 @@ git clone https://aur.archlinux.org/paru "$WORK_DIR/paru"
 cd "$WORK_DIR/paru" && makepkg -si --noconfirm
 cd -
 
-
-curl -fsSL https://install.danklinux.com | sh
-
 # 3. AUR
 paru -S --noconfirm $AUR_PACKAGES
+
 
 # 4. Starship y Shell
 curl -sS https://starship.rs/install.sh | sh
 sudo chsh -s $(which zsh) $USER
+
+curl -fsSL https://install.danklinux.com | sh
+
 
 # 6. Desplegar Dotfiles (Git Bare)
 #echo "📂 Clonando configuraciones..."
